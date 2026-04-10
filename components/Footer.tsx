@@ -34,7 +34,7 @@ export default function Footer() {
           style={{ mixBlendMode: 'plus-lighter' }}
         >
           2026 \u00a9 MIT License <br />
-          <span className="opacity-40 text-[0.75rem] mt-1 block">京ICP备XXXXXXXX号-1</span>
+          <span className="opacity-40 text-[0.75rem] mt-1 block"></span>
         </small>
       </div>
     </footer>
