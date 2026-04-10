@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --midground: #ffe6cb;
+  --midground-base: #ffe6cb;
+  --background: #041C1C;
+  --background-base: #041C1C;
+  --foreground: #ffffff;
+  --foreground-base: #ffffff;
+  --vsq: calc(0.5vw + 0.5vh);
+}
+
+/* ── Base ── */
+html {
+  font-size: clamp(12px, calc(var(--vsq) * 5), 16px);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+  color: var(--midground);
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+small { font-size: 1.0625rem; }
+code  { font-size: 0.875rem; }
+
+/* ── Grid System (.g / .gc) ── */
+.g {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  border-left: 1px solid rgba(255, 230, 203, 0.15);
+}
+
+@media (min-width: 640px) {
+  .g:has(> .gc:nth-child(2)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .g:has(> .gc:nth-child(3)) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .g:has(> .gc:nth-child(4)) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .g:has(> .gc:nth-child(5)) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .g:has(> .gc:nth-child(6)) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .g:has(> .gc:nth-child(3)):not(:has(> .gc:nth-child(4))) {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+}
+
+.g:last-child {
+  border-bottom: 1px solid rgba(255, 230, 203, 0.15);
+}
+
+.g:first-child,
+.g + .g > .gc,
+.g > .g {
+  border-top: 1px solid rgba(255, 230, 203, 0.15);
+}
+
+.g .g { border-left: 0; }
+
+.g .gc {
+  min-width: 0;
+  border-right: 1px solid rgba(255, 230, 203, 0.15);
+  padding: 1rem;
+}
+
+/* ── Animations ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: 0.6s ease-out both slide-up;
+}
+
+/* ── Dither Pattern ── */
+.dither {
+  background: repeating-conic-gradient(currentColor 0% 25%, transparent 0% 50%) 0 0 / 2px 2px;
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--midground);
+  color: var(--background);
+}
+
+/* ── Scrollbar ── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+*:hover {
+  scrollbar-color: rgba(255, 230, 203, 0.2) transparent;
+}
+
+::-webkit-scrollbar { width: 0.25rem; height: 0.25rem; }
+::-webkit-scrollbar-track { display: none; }
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 1rem;
+}
+:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 230, 203, 0.2);
+}
+
+/* ── Utility: tap highlight ── */
+.tap-highlight-transparent {
+  -webkit-tap-highlight-color: transparent;
+}
