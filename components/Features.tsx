@@ -2,28 +2,47 @@
 
 const features = [
   {
-    title: '融入本土生态平台',
-    desc: '系统级打通微信、飞书、钉钉、企业微信。PC 上处理深度工作，手机端随时跟进，真正做到无缝的全终端覆盖体系。',
+    title: '官方网关 · 本土平台',
+    desc:
+      '文档列出的中国区相关通道包括钉钉、飞书 / Lark、企业微信（含 Callback）、微信、QQ、元宝等，并与 Telegram、Discord、Slack、WhatsApp 等并列。请查阅官方平台对比表了解语音、文件、线程、流式等差异。',
   },
   {
-    title: '具备记忆，越用越懂你',
-    desc: '内置向量持久化记忆库与技能自演化机制。你的编码语境、项目架构背景与业务术语，它只需学一次便能受用一生。',
+    title: '持久化记忆与技能演化',
+    desc:
+      '内置 MEMORY.md / USER.md 文件记忆（有字符上限，存于 ~/.hermes/memories/）与 SQLite FTS5 跨会话全文检索（session_search）；可选通过 hermes memory setup 接入 Supermemory、Mem0 等外部向量/语义记忆插件。技能可在使用中自我改进。',
   },
   {
-    title: '一句话完成自动化',
-    desc: '告别繁琐的 Cron 脚本编写。用自然语言交代任务，即可在后台静默运行：实现自动推送早晨数据简报，或按时抓取监控告警。',
+    title: '自然语言定时任务',
+    desc: '内置 Cron，可用自然语言配置定时作业，并投递到已配置的消息平台；v0.21.0 起支持带持久记忆与 continuity 的定时任务。',
   },
   {
-    title: '多智能体并行流水线',
-    desc: '可将海量复杂业务拆解为并行子任务。隔离的子 Agent 独立执行 Python 脚本，支持无缝内网调用公司私有 API。',
+    title: '子 Agent 并行与 Bot Mode',
+    desc:
+      '复杂任务可通过隔离子 Agent（delegate_task）并行执行，支持 execute_code 以 RPC 调用工具；v0.21.0 起可中途 steer，默认并发上限 10。Hermes Desktop 提供 Bot Mode（多命名 Bot 群聊、@提及）与 hermes peer 机器人私信。',
   },
   {
-    title: '私有部署，数据主权',
-    desc: '支持 Docker 和轻量级原生运行环境。所有的代码信息、群聊记录和敏感资产百分百存留本地服务器，金融级别安全可控。',
+    title: '可私有部署与多运行后端',
+    desc:
+      '支持 Docker 与原生 Windows（PowerShell 安装脚本）、Linux、macOS；另有 7 种终端执行后端（local、Docker、SSH、Singularity、Modal、Daytona、Vercel Sandbox 等）。默认拒绝未授权网关用户，并提供命令审批等安全机制；选用云模型时对话会发送至对应提供商。',
+  },
+  {
+    title: 'MCP、浏览器与 Web 能力',
+    desc:
+      '可连接任意 MCP 服务器（桌面端 Connectors / MCP 管理页，支持 OAuth）。内置浏览器自动化与视觉能力；通过 Nous Portal Tool Gateway 或自建后端可使用搜索、云浏览器、生图、TTS 等能力。',
+  },
+  {
+    title: 'Hermes Desktop',
+    desc:
+      '官方提供 Windows / macOS 桌面应用（Simple / Advanced 界面、内置浏览器操控、CLI 命令面板 Ctrl+P 等）。安装包入口见 hermes-agent.nousresearch.com。',
   },
   {
     title: '全栈 Web 与解析能力',
-    desc: '内置浏览器自动化与 AI 视觉能力。整合主流搜索引擎和复杂图文解析，一键完成多网页资料萃取、对比与报告生成。',
+    desc: '内置浏览器自动化与 AI 视觉；可完成多网页资料萃取与报告生成。搜索与生图等需配置 Tool Gateway 或相应提供商。',
+  },
+  {
+    title: '开放生态',
+    desc:
+      '兼容 agentskills.io 技能标准；插件目录支持 SHA 固定安装。可从 OpenClaw 迁移（hermes claw migrate）。社区第三方微信桥 HermesClaw 非官方产品，接入前请自行甄别。',
   },
 ]
 
@@ -35,6 +54,9 @@ export default function Features() {
           <small className="font-serif text-[.9375rem] tracking-[0.1875rem]">
             <span className="font-sans font-bold">核心架构特性</span>
           </small>
+          <p className="text-[0.85rem] tracking-normal normal-case opacity-50">
+            表述依据官方 README 与文档（截至 2026-10-11）。
+          </p>
         </hgroup>
       </div>
 

@@ -33,9 +33,12 @@ export default function TerminalDemo() {
       <div className="gc col-span-full lg:col-span-1">
         <hgroup className="flex flex-col gap-2">
           <small className="font-serif text-[.9375rem] tracking-[0.1875rem]">
-            <span className="font-sans font-bold">中国区开发者真实体验评析</span>
+            <span className="font-sans font-bold">场景演示（虚构对话示例）</span>
           </small>
         </hgroup>
+        <p className="text-[0.8rem] leading-relaxed tracking-normal normal-case opacity-45 mt-2 max-w-[480px]">
+          以下为说明网关与自动化能力的示意脚本，不代表真实用户测评或官方承诺效果。
+        </p>
 
         <div className="mt-3 border-4 border-double border-inherit rounded-sm">
           <div className="flex items-center gap-3 border-b border-[rgba(255,230,203,0.1)] px-3 py-2 bg-[rgba(4,28,28,0.3)]">
