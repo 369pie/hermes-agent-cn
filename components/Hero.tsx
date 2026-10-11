@@ -1,40 +1,12 @@
 'use client'
 
-import { useState } from 'react'
-
-const installCmd = 'curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash'
-const configCmd = 'hermes setup'
-
-function CopyButton({ text }: { text: string }) {
-  const [copied, setCopied] = useState(false)
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(text)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch {
-      // ignore
-    }
-  }
-
-  return (
-    <button
-      onClick={handleCopy}
-      className="font-mono cursor-pointer border-none bg-transparent text-[0.6875rem] tracking-widest uppercase hover:text-midground tap-highlight-transparent min-h-[44px] min-w-[44px] transition-colors flex items-center justify-center opacity-60"
-    >
-      {copied ? '已复制' : '复制'}
-    </button>
-  )
-}
-
 export default function Hero() {
   return (
     <div className="g">
       <div className="gc flex flex-col items-center justify-center gap-6 py-16 text-center md:py-24 col-span-full">
         <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
           <small className="font-serif text-[.9375rem] tracking-[0.1875rem] mb-4 opacity-70">
-            完全开源 · 为国内环境深度优化
+            开源免费 · MIT 协议
           </small>
           <span
             className="font-sans block text-4xl md:text-5xl font-bold mt-5"
@@ -44,38 +16,49 @@ export default function Hero() {
           </span>
         </div>
 
-        <div className="max-w-[600px] animate-slide-up" style={{ animationDelay: '0.25s' }}>
+        <div className="max-w-[640px] animate-slide-up" style={{ animationDelay: '0.25s' }}>
           <p className="text-[1.125rem] leading-relaxed tracking-normal normal-case opacity-60">
-            打破平台护城河的限制。由私有服务器驱动，原生无缝对接微信、飞书、钉钉。凭借持久化记忆与自动构建的技能库，它将逐渐进化为最懂你的数字分身。
+            在你自己的机器或服务器上运行的自主 Agent。官方网关支持微信、飞书、钉钉、企业微信、QQ、元宝等 20+
+            消息平台（各平台语音、线程、流式等能力不同）。凭借持久化记忆、技能自演化与子 Agent 并行，它会随使用逐渐贴合你的工作方式。
+          </p>
+          <p className="text-[0.85rem] leading-relaxed tracking-normal normal-case opacity-40 mt-4">
+            最新正式版{' '}
+            <a
+              href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:opacity-80"
+            >
+              v0.21.6
+            </a>
+            （2026-10-08）· 本站为中文非官方介绍，请以{' '}
+            <a
+              href="https://hermes-agent.nousresearch.com/docs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:opacity-80"
+            >
+              官方文档
+            </a>
+            为准
           </p>
         </div>
 
-        <div className="flex flex-col items-center gap-4 animate-slide-up w-full mt-4" style={{ animationDelay: '0.4s' }}>
-          <div className="flex w-full min-w-0 max-w-[520px] flex-col gap-5 text-left">
-            <div className="flex flex-col gap-1">
-              <div className="flex items-center justify-between">
-                <small className="font-serif text-[.9375rem] tracking-[0.1875rem] opacity-50">
-                  1. 一键安装 <span className="opacity-50 text-[12px] font-sans ml-2">(支持国内网络直连优化)</span>
-                </small>
-                <CopyButton text={installCmd} />
-              </div>
-              <div className="bg-[rgba(4,28,28,0.4)] font-mono border border-[rgba(255,230,203,0.15)] px-3 py-3 text-[0.75rem] leading-relaxed lowercase">
-                <code className="break-all">{installCmd}</code>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-1">
-              <div className="flex items-center justify-between">
-                <small className="font-serif text-[.9375rem] tracking-[0.1875rem] opacity-50">
-                  2. 交互式配置
-                </small>
-                <CopyButton text={configCmd} />
-              </div>
-              <div className="bg-[rgba(4,28,28,0.4)] font-mono border border-[rgba(255,230,203,0.15)] px-3 py-3 text-[0.75rem] leading-relaxed lowercase">
-                <code className="break-all">{configCmd}</code>
-              </div>
-            </div>
-          </div>
+        <div className="flex flex-wrap items-center justify-center gap-4 animate-slide-up mt-2" style={{ animationDelay: '0.4s' }}>
+          <a
+            href="#install"
+            className="font-mono text-[0.7rem] tracking-widest uppercase px-5 py-3 border border-[rgba(255,230,203,0.25)] hover:border-[rgba(255,230,203,0.45)] transition-colors"
+          >
+            安装指南
+          </a>
+          <a
+            href="https://hermes-agent.nousresearch.com/docs/user-guide/messaging"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-[0.7rem] tracking-widest uppercase px-5 py-3 border border-[rgba(255,230,203,0.15)] opacity-60 hover:opacity-90 transition-opacity"
+          >
+            消息平台文档 ↗
+          </a>
         </div>
       </div>
     </div>

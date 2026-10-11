@@ -3,9 +3,12 @@
 import { useState } from 'react'
 
 const navLinks = [
-  { label: '中文文档', href: '/docs' },
+  { label: '安装', href: '#install' },
+  { label: '特性', href: '#features' },
+  { label: '动态', href: '#news' },
+  { label: '官方文档', href: 'https://hermes-agent.nousresearch.com/docs/', external: true },
   { label: 'GitHub', href: 'https://github.com/NousResearch/hermes-agent', external: true },
-  { label: '加入社群', href: '#', external: false }, 
+  { label: 'Discord', href: 'https://discord.gg/NousResearch', external: true },
 ]
 
 export default function Navbar() {
@@ -39,7 +42,7 @@ export default function Navbar() {
 
         <div className="gc flex items-start justify-between">
           <small className="font-serif text-[.9375rem] tracking-[0.1875rem] opacity-50">
-            主题
+            中文站
           </small>
         </div>
       </header>

@@ -29,12 +29,15 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Hermes Agent \u2014 \u4e00\u4e2a\u4e0e\u4f60\u5171\u540c\u6210\u957f\u7684 Agent | Nous Research',
-  description: '\u4e00\u4e2a\u5f00\u6e90\u7684\u81ea\u4e3b Agent\uff0c\u5b83\u80fd\u5b66\u4f60\u7684\u9879\u76ee\uff0c\u8bb0\u4f4f\u5b83\u5b66\u5230\u7684\u4e00\u5207\uff0c\u8fd0\u884c\u8d8a\u4e45\u8d8a\u5f3a\u5927\u3002',
+  title: 'Hermes Agent 中文网 — 开源自主 Agent 介绍（非官方）',
+  description:
+    'Hermes Agent 中文介绍站：官方网关支持微信、飞书、钉钉等企业协作平台，v0.21.6（2026-10-08），安装指南与国内模型提供商速览。请以 Nous Research 官方文档为准。',
   openGraph: {
-    title: 'Hermes Agent \u2014 AI Agent \u6846\u67b6',
-    description: '\u4e00\u4e2a\u5f00\u6e90\u7684\u81ea\u4e3b Agent\uff0c\u5b83\u80fd\u5b66\u4f60\u7684\u9879\u76ee\uff0c\u8bb0\u4f4f\u5b83\u5b66\u5230\u7684\u4e00\u5207\uff0c\u8fd0\u884c\u8d8a\u4e45\u8d8a\u5f3a\u5927\u3002',
+    title: 'Hermes Agent 中文网',
+    description:
+      '开源 MIT 自主 Agent：持久化记忆、子 Agent 并行、MCP 与 20+ 消息平台。跟踪 v0.21.6，中文非官方介绍站。',
     type: 'website',
+    url: 'https://hermes-ai-cn.com',
   },
 }
 
